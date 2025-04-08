@@ -13,6 +13,7 @@ from src.helper import extract_text_from_pdf, chunk_text, download_embedding_mod
 from store_index import PineCone_db
 from tqdm.auto import tqdm
 import time
+from langchain_core.documents import Document
 
 
 
@@ -112,7 +113,7 @@ def main():
                     # Create a placeholder for the progress text
                     progress_text = st.empty()
                     
-                    # Initialize Pinecone
+                    # Initialize Pinecone with chunks 
                     docsearch = PineCone_db(index_name="q-a", model_embedding=model_embedding, text_chunks=chunks)
                     
                     # Update progress for each chunk
