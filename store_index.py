@@ -5,7 +5,7 @@ load_dotenv(override=True)
 import os
 
 
-def PineCone(index_name, model_embedding, text_chunks):
+def PineCone_db(index_name, model_embedding, text_chunks):
     """
     Creates a new Pinecone index and uploads text chunks into it using the provided embedding model.
 
